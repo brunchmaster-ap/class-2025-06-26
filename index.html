@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Race and Income</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Race and Income</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Race and Income</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-bbbdcf888a2a729dbcc9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-bbbdcf888a2a729dbcc9">{"x":{"data":[{"x":[86143,201310,114065,223094,236307,30478,141464,225256,146830,125021,240072,124267,175841,151706,43673,226960,76600,29674,95422,239536,224594,179345,167317,248682,170812,182962,145135,156653,86507,53836,241496,227529,178862,202958,25661,129893,194446,69774,93182,73274,52844,115346,115157,104834,55062,51925,73598,127171,81174,217300,30541,121706,203753,48037,149018,67502,49332,193261,225860,106126,172976,41813,108313,83108,207367,123159,206315,206850,202699,121161,193529,164721,183342,20144,129323,70627,107358,160937,100914,45561,76032,173653,116059,201285,43659,120025,246540,225402,223888,60262,50060,170213,99009,171054,93686,63169,199928,41527,127359,137646,157997,96549,132381,239529,131068,224781,230321,160009,114459,53832,235119,89283,33966,237977,185737,52728,146335,239441,154661,113037],"y":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"text":["Income: $86143<br>Race: White<br>Borough: Bronx","Income: $201310<br>Race: White<br>Borough: Bronx","Income: $114065<br>Race: White<br>Borough: Bronx","Income: $223094<br>Race: White<br>Borough: Bronx","Income: $236307<br>Race: White<br>Borough: Bronx","Income: $30478<br>Race: White<br>Borough: Bronx","Income: $141464<br>Race: White<br>Borough: Bronx","Income: $225256<br>Race: White<br>Borough: Bronx","Income: $146830<br>Race: White<br>Borough: Bronx","Income: $125021<br>Race: White<br>Borough: Bronx","Income: $240072<br>Race: White<br>Borough: Bronx","Income: $124267<br>Race: White<br>Borough: Bronx","Income: $175841<br>Race: White<br>Borough: Bronx","Income: $151706<br>Race: White<br>Borough: Bronx","Income: $43673<br>Race: White<br>Borough: Bronx","Income: $226960<br>Race: White<br>Borough: Bronx","Income: $76600<br>Race: White<br>Borough: Bronx","Income: $29674<br>Race: White<br>Borough: Bronx","Income: $95422<br>Race: White<br>Borough: Bronx","Income: $239536<br>Race: White<br>Borough: Bronx","Income: $224594<br>Race: White<br>Borough: Bronx","Income: $179345<br>Race: White<br>Borough: Bronx","Income: $167317<br>Race: White<br>Borough: Bronx","Income: $248682<br>Race: White<br>Borough: Bronx","Income: $170812<br>Race: White<br>Borough: Bronx","Income: $182962<br>Race: White<br>Borough: Bronx","Income: $145135<br>Race: White<br>Borough: Bronx","Income: $156653<br>Race: White<br>Borough: Bronx","Income: $86507<br>Race: White<br>Borough: Bronx","Income: $53836<br>Race: White<br>Borough: Bronx","Income: $241496<br>Race: Hispanic<br>Borough: Bronx","Income: $227529<br>Race: Hispanic<br>Borough: Bronx","Income: $178862<br>Race: Hispanic<br>Borough: Bronx","Income: $202958<br>Race: Hispanic<br>Borough: Bronx","Income: $25661<br>Race: Hispanic<br>Borough: Bronx","Income: $129893<br>Race: Hispanic<br>Borough: Bronx","Income: $194446<br>Race: Hispanic<br>Borough: Bronx","Income: $69774<br>Race: Hispanic<br>Borough: Bronx","Income: $93182<br>Race: Hispanic<br>Borough: Bronx","Income: $73274<br>Race: Hispanic<br>Borough: Bronx","Income: $52844<br>Race: Hispanic<br>Borough: Bronx","Income: $115346<br>Race: Hispanic<br>Borough: Bronx","Income: $115157<br>Race: Hispanic<br>Borough: Bronx","Income: $104834<br>Race: Hispanic<br>Borough: Bronx","Income: $55062<br>Race: Hispanic<br>Borough: Bronx","Income: $51925<br>Race: Hispanic<br>Borough: Bronx","Income: $73598<br>Race: Hispanic<br>Borough: Bronx","Income: $127171<br>Race: Hispanic<br>Borough: Bronx","Income: $81174<br>Race: Hispanic<br>Borough: Bronx","Income: $217300<br>Race: Hispanic<br>Borough: Bronx","Income: $30541<br>Race: Hispanic<br>Borough: Bronx","Income: $121706<br>Race: Hispanic<br>Borough: Bronx","Income: $203753<br>Race: Hispanic<br>Borough: Bronx","Income: $48037<br>Race: Hispanic<br>Borough: Bronx","Income: $149018<br>Race: Hispanic<br>Borough: Bronx","Income: $67502<br>Race: Hispanic<br>Borough: Bronx","Income: $49332<br>Race: Hispanic<br>Borough: Bronx","Income: $193261<br>Race: Hispanic<br>Borough: Bronx","Income: $225860<br>Race: Hispanic<br>Borough: Bronx","Income: $106126<br>Race: Hispanic<br>Borough: Bronx","Income: $172976<br>Race: Black<br>Borough: Bronx","Income: $41813<br>Race: Black<br>Borough: Bronx","Income: $108313<br>Race: Black<br>Borough: Bronx","Income: $83108<br>Race: Black<br>Borough: Bronx","Income: $207367<br>Race: Black<br>Borough: Bronx","Income: $123159<br>Race: Black<br>Borough: Bronx","Income: $206315<br>Race: Black<br>Borough: Bronx","Income: $206850<br>Race: Black<br>Borough: Bronx","Income: $202699<br>Race: Black<br>Borough: Bronx","Income: $121161<br>Race: Black<br>Borough: Bronx","Income: $193529<br>Race: Black<br>Borough: Bronx","Income: $164721<br>Race: Black<br>Borough: Bronx","Income: $183342<br>Race: Black<br>Borough: Bronx","Income: $20144<br>Race: Black<br>Borough: Bronx","Income: $129323<br>Race: Black<br>Borough: Bronx","Income: $70627<br>Race: Black<br>Borough: Bronx","Income: $107358<br>Race: Black<br>Borough: Bronx","Income: $160937<br>Race: Black<br>Borough: Bronx","Income: $100914<br>Race: Black<br>Borough: Bronx","Income: $45561<br>Race: Black<br>Borough: Bronx","Income: $76032<br>Race: Black<br>Borough: Bronx","Income: $173653<br>Race: Black<br>Borough: Bronx","Income: $116059<br>Race: Black<br>Borough: Bronx","Income: $201285<br>Race: Black<br>Borough: Bronx","Income: $43659<br>Race: Black<br>Borough: Bronx","Income: $120025<br>Race: Black<br>Borough: Bronx","Income: $246540<br>Race: Black<br>Borough: Bronx","Income: $225402<br>Race: Black<br>Borough: Bronx","Income: $223888<br>Race: Black<br>Borough: Bronx","Income: $60262<br>Race: Black<br>Borough: Bronx","Income: $50060<br>Race: Asian<br>Borough: Bronx","Income: $170213<br>Race: Asian<br>Borough: Bronx","Income: $99009<br>Race: Asian<br>Borough: Bronx","Income: $171054<br>Race: Asian<br>Borough: Bronx","Income: $93686<br>Race: Asian<br>Borough: Bronx","Income: $63169<br>Race: Asian<br>Borough: Bronx","Income: $199928<br>Race: Asian<br>Borough: Bronx","Income: $41527<br>Race: Asian<br>Borough: Bronx","Income: $127359<br>Race: Asian<br>Borough: Bronx","Income: $137646<br>Race: Asian<br>Borough: Bronx","Income: $157997<br>Race: Asian<br>Borough: Bronx","Income: $96549<br>Race: Asian<br>Borough: Bronx","Income: $132381<br>Race: Asian<br>Borough: Bronx","Income: $239529<br>Race: Asian<br>Borough: Bronx","Income: $131068<br>Race: Asian<br>Borough: Bronx","Income: $224781<br>Race: Asian<br>Borough: Bronx","Income: $230321<br>Race: Asian<br>Borough: Bronx","Income: $160009<br>Race: Asian<br>Borough: Bronx","Income: $114459<br>Race: Asian<br>Borough: Bronx","Income: $53832<br>Race: Asian<br>Borough: Bronx","Income: $235119<br>Race: Asian<br>Borough: Bronx","Income: $89283<br>Race: Asian<br>Borough: Bronx","Income: $33966<br>Race: Asian<br>Borough: Bronx","Income: $237977<br>Race: Asian<br>Borough: Bronx","Income: $185737<br>Race: Asian<br>Borough: Bronx","Income: $52728<br>Race: Asian<br>Borough: Bronx","Income: $146335<br>Race: Asian<br>Borough: Bronx","Income: $239441<br>Race: Asian<br>Borough: Bronx","Income: $154661<br>Race: Asian<br>Borough: Bronx","Income: $113037<br>Race: Asian<br>Borough: Bronx"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(140,20,158,1)","rgba(251,162,58,1)","rgba(179,45,142,1)","rgba(249,201,48,1)","rgba(245,225,42,1)","rgba(44,7,142,1)","rgba(209,81,115,1)","rgba(249,205,47,1)","rgba(214,87,110,1)","rgba(192,60,132,1)","rgba(244,232,40,1)","rgba(191,59,132,1)","rgba(236,127,84,1)","rgba(219,93,105,1)","rgba(70,5,152,1)","rgba(248,208,47,1)","rgba(125,10,163,1)","rgba(43,7,142,1)","rgba(154,28,153,1)","rgba(244,231,40,1)","rgba(249,204,48,1)","rgba(238,132,81,1)","rgba(231,114,91,1)","rgba(241,247,34,1)","rgba(233,119,88,1)","rgba(240,137,78,1)","rgba(213,85,112,1)","rgba(224,98,99,1)","rgba(141,20,157,1)","rgba(87,3,159,1)","rgba(244,234,39,1)","rgba(248,209,46,1)","rgba(238,131,82,1)","rgba(251,165,55,1)","rgba(33,7,139,1)","rgba(197,66,127,1)","rgba(247,153,66,1)","rgba(113,3,166,1)","rgba(151,26,154,1)","rgba(119,6,164,1)","rgba(85,3,158,1)","rgba(181,47,141,1)","rgba(181,47,141,1)","rgba(167,36,148,1)","rgba(89,2,160,1)","rgba(84,3,158,1)","rgba(120,7,164,1)","rgba(194,63,130,1)","rgba(133,15,160,1)","rgba(250,191,50,1)","rgba(45,7,142,1)","rgba(188,56,135,1)","rgba(252,166,54,1)","rgba(77,4,155,1)","rgba(217,90,108,1)","rgba(109,1,167,1)","rgba(79,4,156,1)","rgba(246,151,68,1)","rgba(248,206,47,1)","rgba(169,37,147,1)","rgba(234,122,87,1)","rgba(67,5,150,1)","rgba(172,39,146,1)","rgba(136,17,159,1)","rgba(252,173,53,1)","rgba(190,58,133,1)","rgba(252,171,53,1)","rgba(252,172,53,1)","rgba(251,164,56,1)","rgba(188,55,135,1)","rgba(246,152,67,1)","rgba(229,110,93,1)","rgba(241,137,78,1)","rgba(13,8,135,1)","rgba(197,66,128,1)","rgba(115,4,166,1)","rgba(171,38,146,1)","rgba(227,105,96,1)","rgba(162,33,150,1)","rgba(73,4,153,1)","rgba(124,9,163,1)","rgba(235,123,86,1)","rgba(182,48,140,1)","rgba(251,162,58,1)","rgba(70,5,152,1)","rgba(186,53,136,1)","rgba(242,243,36,1)","rgba(249,206,47,1)","rgba(249,203,48,1)","rgba(97,1,164,1)","rgba(81,3,156,1)","rgba(233,118,89,1)","rgba(159,31,151,1)","rgba(233,120,88,1)","rgba(152,26,154,1)","rgba(102,1,166,1)","rgba(250,160,59,1)","rgba(66,5,150,1)","rgba(194,63,129,1)","rgba(205,76,119,1)","rgba(225,100,98,1)","rgba(156,29,152,1)","rgba(200,70,125,1)","rgba(244,231,40,1)","rgba(198,68,126,1)","rgba(249,205,48,1)","rgba(247,214,45,1)","rgba(226,103,97,1)","rgba(180,46,142,1)","rgba(87,3,159,1)","rgba(246,223,43,1)","rgba(145,22,156,1)","rgba(52,6,145,1)","rgba(245,228,41,1)","rgba(242,141,75,1)","rgba(85,3,158,1)","rgba(214,86,110,1)","rgba(244,231,40,1)","rgba(222,96,102,1)","rgba(178,44,143,1)"],"opacity":0.59999999999999998,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(140,20,158,1)","rgba(251,162,58,1)","rgba(179,45,142,1)","rgba(249,201,48,1)","rgba(245,225,42,1)","rgba(44,7,142,1)","rgba(209,81,115,1)","rgba(249,205,47,1)","rgba(214,87,110,1)","rgba(192,60,132,1)","rgba(244,232,40,1)","rgba(191,59,132,1)","rgba(236,127,84,1)","rgba(219,93,105,1)","rgba(70,5,152,1)","rgba(248,208,47,1)","rgba(125,10,163,1)","rgba(43,7,142,1)","rgba(154,28,153,1)","rgba(244,231,40,1)","rgba(249,204,48,1)","rgba(238,132,81,1)","rgba(231,114,91,1)","rgba(241,247,34,1)","rgba(233,119,88,1)","rgba(240,137,78,1)","rgba(213,85,112,1)","rgba(224,98,99,1)","rgba(141,20,157,1)","rgba(87,3,159,1)","rgba(244,234,39,1)","rgba(248,209,46,1)","rgba(238,131,82,1)","rgba(251,165,55,1)","rgba(33,7,139,1)","rgba(197,66,127,1)","rgba(247,153,66,1)","rgba(113,3,166,1)","rgba(151,26,154,1)","rgba(119,6,164,1)","rgba(85,3,158,1)","rgba(181,47,141,1)","rgba(181,47,141,1)","rgba(167,36,148,1)","rgba(89,2,160,1)","rgba(84,3,158,1)","rgba(120,7,164,1)","rgba(194,63,130,1)","rgba(133,15,160,1)","rgba(250,191,50,1)","rgba(45,7,142,1)","rgba(188,56,135,1)","rgba(252,166,54,1)","rgba(77,4,155,1)","rgba(217,90,108,1)","rgba(109,1,167,1)","rgba(79,4,156,1)","rgba(246,151,68,1)","rgba(248,206,47,1)","rgba(169,37,147,1)","rgba(234,122,87,1)","rgba(67,5,150,1)","rgba(172,39,146,1)","rgba(136,17,159,1)","rgba(252,173,53,1)","rgba(190,58,133,1)","rgba(252,171,53,1)","rgba(252,172,53,1)","rgba(251,164,56,1)","rgba(188,55,135,1)","rgba(246,152,67,1)","rgba(229,110,93,1)","rgba(241,137,78,1)","rgba(13,8,135,1)","rgba(197,66,128,1)","rgba(115,4,166,1)","rgba(171,38,146,1)","rgba(227,105,96,1)","rgba(162,33,150,1)","rgba(73,4,153,1)","rgba(124,9,163,1)","rgba(235,123,86,1)","rgba(182,48,140,1)","rgba(251,162,58,1)","rgba(70,5,152,1)","rgba(186,53,136,1)","rgba(242,243,36,1)","rgba(249,206,47,1)","rgba(249,203,48,1)","rgba(97,1,164,1)","rgba(81,3,156,1)","rgba(233,118,89,1)","rgba(159,31,151,1)","rgba(233,120,88,1)","rgba(152,26,154,1)","rgba(102,1,166,1)","rgba(250,160,59,1)","rgba(66,5,150,1)","rgba(194,63,129,1)","rgba(205,76,119,1)","rgba(225,100,98,1)","rgba(156,29,152,1)","rgba(200,70,125,1)","rgba(244,231,40,1)","rgba(198,68,126,1)","rgba(249,205,48,1)","rgba(247,214,45,1)","rgba(226,103,97,1)","rgba(180,46,142,1)","rgba(87,3,159,1)","rgba(246,223,43,1)","rgba(145,22,156,1)","rgba(52,6,145,1)","rgba(245,228,41,1)","rgba(242,141,75,1)","rgba(85,3,158,1)","rgba(214,86,110,1)","rgba(244,231,40,1)","rgba(222,96,102,1)","rgba(178,44,143,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[169016,93559,90776,70547,104982,246370,55467,40940,52639,178702,162429,225021,174790,189528,139861,171763,209015,200845,245359,121069,91692,114179,22407,62285,213828,73167,74993,37639,76516,188391,214914,134431,109219,76683,45552,109699,151545,69885,122297,70138,135529,101398,169497,106184,101752,142748,190277,70854,114932,81108,164894,62281,218638,191711,173705,162144,105615,141862,221177,153803,213147,91863,182907,80954,156699,130697,80958,149856,230033,227431,83058,93941,246697,162598,235582,127303,113571,171623,55040,151759,74907,241343,158314,138457,112592,222457,103741,86295,59248,59600,130870,78182,69739,175107,30963,181196,100934,114057,208819,231337,84982,241054,187531,177866,32154,110901,129904,148858,180600,230607,162221,118537,144678,33450,79997,111345,65481,211343,55164,204786],"y":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"text":["Income: $169016<br>Race: White<br>Borough: Brooklyn","Income: $93559<br>Race: White<br>Borough: Brooklyn","Income: $90776<br>Race: White<br>Borough: Brooklyn","Income: $70547<br>Race: White<br>Borough: Brooklyn","Income: $104982<br>Race: White<br>Borough: Brooklyn","Income: $246370<br>Race: White<br>Borough: Brooklyn","Income: $55467<br>Race: White<br>Borough: Brooklyn","Income: $40940<br>Race: White<br>Borough: Brooklyn","Income: $52639<br>Race: White<br>Borough: Brooklyn","Income: $178702<br>Race: White<br>Borough: Brooklyn","Income: $162429<br>Race: White<br>Borough: Brooklyn","Income: $225021<br>Race: White<br>Borough: Brooklyn","Income: $174790<br>Race: White<br>Borough: Brooklyn","Income: $189528<br>Race: White<br>Borough: Brooklyn","Income: $139861<br>Race: White<br>Borough: Brooklyn","Income: $171763<br>Race: White<br>Borough: Brooklyn","Income: $209015<br>Race: White<br>Borough: Brooklyn","Income: $200845<br>Race: White<br>Borough: Brooklyn","Income: $245359<br>Race: White<br>Borough: Brooklyn","Income: $121069<br>Race: White<br>Borough: Brooklyn","Income: $91692<br>Race: White<br>Borough: Brooklyn","Income: $114179<br>Race: White<br>Borough: Brooklyn","Income: $22407<br>Race: White<br>Borough: Brooklyn","Income: $62285<br>Race: White<br>Borough: Brooklyn","Income: $213828<br>Race: White<br>Borough: Brooklyn","Income: $73167<br>Race: White<br>Borough: Brooklyn","Income: $74993<br>Race: White<br>Borough: Brooklyn","Income: $37639<br>Race: White<br>Borough: Brooklyn","Income: $76516<br>Race: White<br>Borough: Brooklyn","Income: $188391<br>Race: White<br>Borough: Brooklyn","Income: $214914<br>Race: Hispanic<br>Borough: Brooklyn","Income: $134431<br>Race: Hispanic<br>Borough: Brooklyn","Income: $109219<br>Race: Hispanic<br>Borough: Brooklyn","Income: $76683<br>Race: Hispanic<br>Borough: Brooklyn","Income: $45552<br>Race: Hispanic<br>Borough: Brooklyn","Income: $109699<br>Race: Hispanic<br>Borough: Brooklyn","Income: $151545<br>Race: Hispanic<br>Borough: Brooklyn","Income: $69885<br>Race: Hispanic<br>Borough: Brooklyn","Income: $122297<br>Race: Hispanic<br>Borough: Brooklyn","Income: $70138<br>Race: Hispanic<br>Borough: Brooklyn","Income: $135529<br>Race: Hispanic<br>Borough: Brooklyn","Income: $101398<br>Race: Hispanic<br>Borough: Brooklyn","Income: $169497<br>Race: Hispanic<br>Borough: Brooklyn","Income: $106184<br>Race: Hispanic<br>Borough: Brooklyn","Income: $101752<br>Race: Hispanic<br>Borough: Brooklyn","Income: $142748<br>Race: Hispanic<br>Borough: Brooklyn","Income: $190277<br>Race: Hispanic<br>Borough: Brooklyn","Income: $70854<br>Race: Hispanic<br>Borough: Brooklyn","Income: $114932<br>Race: Hispanic<br>Borough: Brooklyn","Income: $81108<br>Race: Hispanic<br>Borough: Brooklyn","Income: $164894<br>Race: Hispanic<br>Borough: Brooklyn","Income: $62281<br>Race: Hispanic<br>Borough: Brooklyn","Income: $218638<br>Race: Hispanic<br>Borough: Brooklyn","Income: $191711<br>Race: Hispanic<br>Borough: Brooklyn","Income: $173705<br>Race: Hispanic<br>Borough: Brooklyn","Income: $162144<br>Race: Hispanic<br>Borough: Brooklyn","Income: $105615<br>Race: Hispanic<br>Borough: Brooklyn","Income: $141862<br>Race: Hispanic<br>Borough: Brooklyn","Income: $221177<br>Race: Hispanic<br>Borough: Brooklyn","Income: $153803<br>Race: Hispanic<br>Borough: Brooklyn","Income: $213147<br>Race: Black<br>Borough: Brooklyn","Income: $91863<br>Race: Black<br>Borough: Brooklyn","Income: $182907<br>Race: Black<br>Borough: Brooklyn","Income: $80954<br>Race: Black<br>Borough: Brooklyn","Income: $156699<br>Race: Black<br>Borough: Brooklyn","Income: $130697<br>Race: Black<br>Borough: Brooklyn","Income: $80958<br>Race: Black<br>Borough: Brooklyn","Income: $149856<br>Race: Black<br>Borough: Brooklyn","Income: $230033<br>Race: Black<br>Borough: Brooklyn","Income: $227431<br>Race: Black<br>Borough: Brooklyn","Income: $83058<br>Race: Black<br>Borough: Brooklyn","Income: $93941<br>Race: Black<br>Borough: Brooklyn","Income: $246697<br>Race: Black<br>Borough: Brooklyn","Income: $162598<br>Race: Black<br>Borough: Brooklyn","Income: $235582<br>Race: Black<br>Borough: Brooklyn","Income: $127303<br>Race: Black<br>Borough: Brooklyn","Income: $113571<br>Race: Black<br>Borough: Brooklyn","Income: $171623<br>Race: Black<br>Borough: Brooklyn","Income: $55040<br>Race: Black<br>Borough: Brooklyn","Income: $151759<br>Race: Black<br>Borough: Brooklyn","Income: $74907<br>Race: Black<br>Borough: Brooklyn","Income: $241343<br>Race: Black<br>Borough: Brooklyn","Income: $158314<br>Race: Black<br>Borough: Brooklyn","Income: $138457<br>Race: Black<br>Borough: Brooklyn","Income: $112592<br>Race: Black<br>Borough: Brooklyn","Income: $222457<br>Race: Black<br>Borough: Brooklyn","Income: $103741<br>Race: Black<br>Borough: Brooklyn","Income: $86295<br>Race: Black<br>Borough: Brooklyn","Income: $59248<br>Race: Black<br>Borough: Brooklyn","Income: $59600<br>Race: Black<br>Borough: Brooklyn","Income: $130870<br>Race: Asian<br>Borough: Brooklyn","Income: $78182<br>Race: Asian<br>Borough: Brooklyn","Income: $69739<br>Race: Asian<br>Borough: Brooklyn","Income: $175107<br>Race: Asian<br>Borough: Brooklyn","Income: $30963<br>Race: Asian<br>Borough: Brooklyn","Income: $181196<br>Race: Asian<br>Borough: Brooklyn","Income: $100934<br>Race: Asian<br>Borough: Brooklyn","Income: $114057<br>Race: Asian<br>Borough: Brooklyn","Income: $208819<br>Race: Asian<br>Borough: Brooklyn","Income: $231337<br>Race: Asian<br>Borough: Brooklyn","Income: $84982<br>Race: Asian<br>Borough: Brooklyn","Income: $241054<br>Race: Asian<br>Borough: Brooklyn","Income: $187531<br>Race: Asian<br>Borough: Brooklyn","Income: $177866<br>Race: Asian<br>Borough: Brooklyn","Income: $32154<br>Race: Asian<br>Borough: Brooklyn","Income: $110901<br>Race: Asian<br>Borough: Brooklyn","Income: $129904<br>Race: Asian<br>Borough: Brooklyn","Income: $148858<br>Race: Asian<br>Borough: Brooklyn","Income: $180600<br>Race: Asian<br>Borough: Brooklyn","Income: $230607<br>Race: Asian<br>Borough: Brooklyn","Income: $162221<br>Race: Asian<br>Borough: Brooklyn","Income: $118537<br>Race: Asian<br>Borough: Brooklyn","Income: $144678<br>Race: Asian<br>Borough: Brooklyn","Income: $33450<br>Race: Asian<br>Borough: Brooklyn","Income: $79997<br>Race: Asian<br>Borough: Brooklyn","Income: $111345<br>Race: Asian<br>Borough: Brooklyn","Income: $65481<br>Race: Asian<br>Borough: Brooklyn","Income: $211343<br>Race: Asian<br>Borough: Brooklyn","Income: $55164<br>Race: Asian<br>Borough: Brooklyn","Income: $204786<br>Race: Asian<br>Borough: Brooklyn"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(232,117,90,1)","rgba(151,26,154,1)","rgba(147,24,155,1)","rgba(114,4,166,1)","rgba(168,36,148,1)","rgba(242,243,36,1)","rgba(89,2,160,1)","rgba(65,5,150,1)","rgba(85,3,158,1)","rgba(238,131,82,1)","rgba(228,107,95,1)","rgba(249,205,48,1)","rgba(236,125,85,1)","rgba(244,146,72,1)","rgba(208,79,117,1)","rgba(234,121,88,1)","rgba(252,176,53,1)","rgba(250,162,58,1)","rgba(242,241,37,1)","rgba(188,55,135,1)","rgba(149,25,155,1)","rgba(180,45,142,1)","rgba(23,8,137,1)","rgba(100,1,165,1)","rgba(251,185,51,1)","rgba(119,6,164,1)","rgba(122,8,163,1)","rgba(59,6,147,1)","rgba(125,10,163,1)","rgba(244,144,73,1)","rgba(251,187,51,1)","rgba(202,72,122,1)","rgba(173,40,146,1)","rgba(125,10,163,1)","rgba(73,4,153,1)","rgba(174,40,145,1)","rgba(219,93,105,1)","rgba(113,3,166,1)","rgba(189,57,134,1)","rgba(114,3,166,1)","rgba(203,73,121,1)","rgba(163,33,150,1)","rgba(232,117,89,1)","rgba(169,37,147,1)","rgba(163,33,149,1)","rgba(210,82,114,1)","rgba(245,147,71,1)","rgba(115,4,166,1)","rgba(180,46,141,1)","rgba(132,15,160,1)","rgba(229,111,93,1)","rgba(100,1,165,1)","rgba(250,193,50,1)","rgba(245,149,69,1)","rgba(235,123,86,1)","rgba(228,106,95,1)","rgba(168,37,147,1)","rgba(210,81,115,1)","rgba(250,198,49,1)","rgba(221,95,103,1)","rgba(251,183,52,1)","rgba(149,25,155,1)","rgba(240,137,78,1)","rgba(132,14,160,1)","rgba(224,99,99,1)","rgba(198,67,126,1)","rgba(132,14,160,1)","rgba(217,91,107,1)","rgba(247,214,45,1)","rgba(248,209,47,1)","rgba(136,17,159,1)","rgba(152,27,154,1)","rgba(241,243,36,1)","rgba(228,107,95,1)","rgba(246,224,43,1)","rgba(194,63,129,1)","rgba(179,44,143,1)","rgba(234,120,88,1)","rgba(89,2,160,1)","rgba(219,93,105,1)","rgba(122,8,163,1)","rgba(244,234,39,1)","rgba(225,101,98,1)","rgba(206,77,118,1)","rgba(178,43,143,1)","rgba(249,200,49,1)","rgba(166,35,148,1)","rgba(141,20,158,1)","rgba(95,2,163,1)","rgba(96,1,163,1)","rgba(198,68,126,1)","rgba(128,11,162,1)","rgba(113,3,166,1)","rgba(236,126,85,1)","rgba(45,7,143,1)","rgba(239,134,80,1)","rgba(162,33,150,1)","rgba(179,45,142,1)","rgba(252,175,53,1)","rgba(247,216,45,1)","rgba(139,18,158,1)","rgba(244,234,39,1)","rgba(243,143,74,1)","rgba(237,129,83,1)","rgba(48,6,144,1)","rgba(176,41,145,1)","rgba(197,66,127,1)","rgba(216,89,108,1)","rgba(239,133,80,1)","rgba(247,215,45,1)","rgba(228,107,95,1)","rgba(185,51,138,1)","rgba(212,84,112,1)","rgba(51,6,144,1)","rgba(131,13,161,1)","rgba(176,41,144,1)","rgba(105,0,168,1)","rgba(251,180,52,1)","rgba(89,2,160,1)","rgba(252,168,54,1)"],"opacity":0.59999999999999998,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(232,117,90,1)","rgba(151,26,154,1)","rgba(147,24,155,1)","rgba(114,4,166,1)","rgba(168,36,148,1)","rgba(242,243,36,1)","rgba(89,2,160,1)","rgba(65,5,150,1)","rgba(85,3,158,1)","rgba(238,131,82,1)","rgba(228,107,95,1)","rgba(249,205,48,1)","rgba(236,125,85,1)","rgba(244,146,72,1)","rgba(208,79,117,1)","rgba(234,121,88,1)","rgba(252,176,53,1)","rgba(250,162,58,1)","rgba(242,241,37,1)","rgba(188,55,135,1)","rgba(149,25,155,1)","rgba(180,45,142,1)","rgba(23,8,137,1)","rgba(100,1,165,1)","rgba(251,185,51,1)","rgba(119,6,164,1)","rgba(122,8,163,1)","rgba(59,6,147,1)","rgba(125,10,163,1)","rgba(244,144,73,1)","rgba(251,187,51,1)","rgba(202,72,122,1)","rgba(173,40,146,1)","rgba(125,10,163,1)","rgba(73,4,153,1)","rgba(174,40,145,1)","rgba(219,93,105,1)","rgba(113,3,166,1)","rgba(189,57,134,1)","rgba(114,3,166,1)","rgba(203,73,121,1)","rgba(163,33,150,1)","rgba(232,117,89,1)","rgba(169,37,147,1)","rgba(163,33,149,1)","rgba(210,82,114,1)","rgba(245,147,71,1)","rgba(115,4,166,1)","rgba(180,46,141,1)","rgba(132,15,160,1)","rgba(229,111,93,1)","rgba(100,1,165,1)","rgba(250,193,50,1)","rgba(245,149,69,1)","rgba(235,123,86,1)","rgba(228,106,95,1)","rgba(168,37,147,1)","rgba(210,81,115,1)","rgba(250,198,49,1)","rgba(221,95,103,1)","rgba(251,183,52,1)","rgba(149,25,155,1)","rgba(240,137,78,1)","rgba(132,14,160,1)","rgba(224,99,99,1)","rgba(198,67,126,1)","rgba(132,14,160,1)","rgba(217,91,107,1)","rgba(247,214,45,1)","rgba(248,209,47,1)","rgba(136,17,159,1)","rgba(152,27,154,1)","rgba(241,243,36,1)","rgba(228,107,95,1)","rgba(246,224,43,1)","rgba(194,63,129,1)","rgba(179,44,143,1)","rgba(234,120,88,1)","rgba(89,2,160,1)","rgba(219,93,105,1)","rgba(122,8,163,1)","rgba(244,234,39,1)","rgba(225,101,98,1)","rgba(206,77,118,1)","rgba(178,43,143,1)","rgba(249,200,49,1)","rgba(166,35,148,1)","rgba(141,20,158,1)","rgba(95,2,163,1)","rgba(96,1,163,1)","rgba(198,68,126,1)","rgba(128,11,162,1)","rgba(113,3,166,1)","rgba(236,126,85,1)","rgba(45,7,143,1)","rgba(239,134,80,1)","rgba(162,33,150,1)","rgba(179,45,142,1)","rgba(252,175,53,1)","rgba(247,216,45,1)","rgba(139,18,158,1)","rgba(244,234,39,1)","rgba(243,143,74,1)","rgba(237,129,83,1)","rgba(48,6,144,1)","rgba(176,41,145,1)","rgba(197,66,127,1)","rgba(216,89,108,1)","rgba(239,133,80,1)","rgba(247,215,45,1)","rgba(228,107,95,1)","rgba(185,51,138,1)","rgba(212,84,112,1)","rgba(51,6,144,1)","rgba(131,13,161,1)","rgba(176,41,144,1)","rgba(105,0,168,1)","rgba(251,180,52,1)","rgba(89,2,160,1)","rgba(252,168,54,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[145770,172333,59491,165603,91730,186647,111756,242952,242502,187142,79160,71011,156400,81530,142146,200617,58654,113012,128463,219665,232913,222855,175063,238538,138782,152599,97356,99885,24606,135647,220340,21449,36573,57769,197177,189092,243531,127289,37108,169228,194476,51534,111214,71747,33330,111055,34934,71954,32565,174165,88481,43166,36538,222501,193477,207819,245892,43828,42780,203731,200452,22169,199185,187760,164930,130609,56026,21890,124065,133227,109605,126873,184054,32719,101600,204647,212213,74682,101417,217084,216366,88056,53821,181918,43876,27757,249863,28021,97830,230465,161964,85846,189693,211832,92282,133290,180396,167536,168102,244906,115389,47463,140987,71767,131875,105149,246171,109313,72726,163358,51404,242518,138467,57506,163038,246769,173817,116351,94369,212109],"y":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"text":["Income: $145770<br>Race: White<br>Borough: Manhattan","Income: $172333<br>Race: White<br>Borough: Manhattan","Income: $59491<br>Race: White<br>Borough: Manhattan","Income: $165603<br>Race: White<br>Borough: Manhattan","Income: $91730<br>Race: White<br>Borough: Manhattan","Income: $186647<br>Race: White<br>Borough: Manhattan","Income: $111756<br>Race: White<br>Borough: Manhattan","Income: $242952<br>Race: White<br>Borough: Manhattan","Income: $242502<br>Race: White<br>Borough: Manhattan","Income: $187142<br>Race: White<br>Borough: Manhattan","Income: $79160<br>Race: White<br>Borough: Manhattan","Income: $71011<br>Race: White<br>Borough: Manhattan","Income: $156400<br>Race: White<br>Borough: Manhattan","Income: $81530<br>Race: White<br>Borough: Manhattan","Income: $142146<br>Race: White<br>Borough: Manhattan","Income: $200617<br>Race: White<br>Borough: Manhattan","Income: $58654<br>Race: White<br>Borough: Manhattan","Income: $113012<br>Race: White<br>Borough: Manhattan","Income: $128463<br>Race: White<br>Borough: Manhattan","Income: $219665<br>Race: White<br>Borough: Manhattan","Income: $232913<br>Race: White<br>Borough: Manhattan","Income: $222855<br>Race: White<br>Borough: Manhattan","Income: $175063<br>Race: White<br>Borough: Manhattan","Income: $238538<br>Race: White<br>Borough: Manhattan","Income: $138782<br>Race: White<br>Borough: Manhattan","Income: $152599<br>Race: White<br>Borough: Manhattan","Income: $97356<br>Race: White<br>Borough: Manhattan","Income: $99885<br>Race: White<br>Borough: Manhattan","Income: $24606<br>Race: White<br>Borough: Manhattan","Income: $135647<br>Race: White<br>Borough: Manhattan","Income: $220340<br>Race: Hispanic<br>Borough: Manhattan","Income: $21449<br>Race: Hispanic<br>Borough: Manhattan","Income: $36573<br>Race: Hispanic<br>Borough: Manhattan","Income: $57769<br>Race: Hispanic<br>Borough: Manhattan","Income: $197177<br>Race: Hispanic<br>Borough: Manhattan","Income: $189092<br>Race: Hispanic<br>Borough: Manhattan","Income: $243531<br>Race: Hispanic<br>Borough: Manhattan","Income: $127289<br>Race: Hispanic<br>Borough: Manhattan","Income: $37108<br>Race: Hispanic<br>Borough: Manhattan","Income: $169228<br>Race: Hispanic<br>Borough: Manhattan","Income: $194476<br>Race: Hispanic<br>Borough: Manhattan","Income: $51534<br>Race: Hispanic<br>Borough: Manhattan","Income: $111214<br>Race: Hispanic<br>Borough: Manhattan","Income: $71747<br>Race: Hispanic<br>Borough: Manhattan","Income: $33330<br>Race: Hispanic<br>Borough: Manhattan","Income: $111055<br>Race: Hispanic<br>Borough: Manhattan","Income: $34934<br>Race: Hispanic<br>Borough: Manhattan","Income: $71954<br>Race: Hispanic<br>Borough: Manhattan","Income: $32565<br>Race: Hispanic<br>Borough: Manhattan","Income: $174165<br>Race: Hispanic<br>Borough: Manhattan","Income: $88481<br>Race: Hispanic<br>Borough: Manhattan","Income: $43166<br>Race: Hispanic<br>Borough: Manhattan","Income: $36538<br>Race: Hispanic<br>Borough: Manhattan","Income: $222501<br>Race: Hispanic<br>Borough: Manhattan","Income: $193477<br>Race: Hispanic<br>Borough: Manhattan","Income: $207819<br>Race: Hispanic<br>Borough: Manhattan","Income: $245892<br>Race: Hispanic<br>Borough: Manhattan","Income: $43828<br>Race: Hispanic<br>Borough: Manhattan","Income: $42780<br>Race: Hispanic<br>Borough: Manhattan","Income: $203731<br>Race: Hispanic<br>Borough: Manhattan","Income: $200452<br>Race: Black<br>Borough: Manhattan","Income: $22169<br>Race: Black<br>Borough: Manhattan","Income: $199185<br>Race: Black<br>Borough: Manhattan","Income: $187760<br>Race: Black<br>Borough: Manhattan","Income: $164930<br>Race: Black<br>Borough: Manhattan","Income: $130609<br>Race: Black<br>Borough: Manhattan","Income: $56026<br>Race: Black<br>Borough: Manhattan","Income: $21890<br>Race: Black<br>Borough: Manhattan","Income: $124065<br>Race: Black<br>Borough: Manhattan","Income: $133227<br>Race: Black<br>Borough: Manhattan","Income: $109605<br>Race: Black<br>Borough: Manhattan","Income: $126873<br>Race: Black<br>Borough: Manhattan","Income: $184054<br>Race: Black<br>Borough: Manhattan","Income: $32719<br>Race: Black<br>Borough: Manhattan","Income: $101600<br>Race: Black<br>Borough: Manhattan","Income: $204647<br>Race: Black<br>Borough: Manhattan","Income: $212213<br>Race: Black<br>Borough: Manhattan","Income: $74682<br>Race: Black<br>Borough: Manhattan","Income: $101417<br>Race: Black<br>Borough: Manhattan","Income: $217084<br>Race: Black<br>Borough: Manhattan","Income: $216366<br>Race: Black<br>Borough: Manhattan","Income: $88056<br>Race: Black<br>Borough: Manhattan","Income: $53821<br>Race: Black<br>Borough: Manhattan","Income: $181918<br>Race: Black<br>Borough: Manhattan","Income: $43876<br>Race: Black<br>Borough: Manhattan","Income: $27757<br>Race: Black<br>Borough: Manhattan","Income: $249863<br>Race: Black<br>Borough: Manhattan","Income: $28021<br>Race: Black<br>Borough: Manhattan","Income: $97830<br>Race: Black<br>Borough: Manhattan","Income: $230465<br>Race: Black<br>Borough: Manhattan","Income: $161964<br>Race: Asian<br>Borough: Manhattan","Income: $85846<br>Race: Asian<br>Borough: Manhattan","Income: $189693<br>Race: Asian<br>Borough: Manhattan","Income: $211832<br>Race: Asian<br>Borough: Manhattan","Income: $92282<br>Race: Asian<br>Borough: Manhattan","Income: $133290<br>Race: Asian<br>Borough: Manhattan","Income: $180396<br>Race: Asian<br>Borough: Manhattan","Income: $167536<br>Race: Asian<br>Borough: Manhattan","Income: $168102<br>Race: Asian<br>Borough: Manhattan","Income: $244906<br>Race: Asian<br>Borough: Manhattan","Income: $115389<br>Race: Asian<br>Borough: Manhattan","Income: $47463<br>Race: Asian<br>Borough: Manhattan","Income: $140987<br>Race: Asian<br>Borough: Manhattan","Income: $71767<br>Race: Asian<br>Borough: Manhattan","Income: $131875<br>Race: Asian<br>Borough: Manhattan","Income: $105149<br>Race: Asian<br>Borough: Manhattan","Income: $246171<br>Race: Asian<br>Borough: Manhattan","Income: $109313<br>Race: Asian<br>Borough: Manhattan","Income: $72726<br>Race: Asian<br>Borough: Manhattan","Income: $163358<br>Race: Asian<br>Borough: Manhattan","Income: $51404<br>Race: Asian<br>Borough: Manhattan","Income: $242518<br>Race: Asian<br>Borough: Manhattan","Income: $138467<br>Race: Asian<br>Borough: Manhattan","Income: $57506<br>Race: Asian<br>Borough: Manhattan","Income: $163038<br>Race: Asian<br>Borough: Manhattan","Income: $246769<br>Race: Asian<br>Borough: Manhattan","Income: $173817<br>Race: Asian<br>Borough: Manhattan","Income: $116351<br>Race: Asian<br>Borough: Manhattan","Income: $94369<br>Race: Asian<br>Borough: Manhattan","Income: $212109<br>Race: Asian<br>Borough: Manhattan"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(213,86,111,1)","rgba(234,121,87,1)","rgba(96,2,163,1)","rgba(230,112,92,1)","rgba(149,25,155,1)","rgba(243,142,74,1)","rgba(177,42,144,1)","rgba(243,237,38,1)","rgba(243,236,39,1)","rgba(243,143,74,1)","rgba(129,13,161,1)","rgba(115,4,165,1)","rgba(224,98,100,1)","rgba(133,15,160,1)","rgba(210,81,115,1)","rgba(250,161,59,1)","rgba(95,2,163,1)","rgba(178,44,143,1)","rgba(196,65,128,1)","rgba(250,195,50,1)","rgba(247,219,44,1)","rgba(249,201,48,1)","rgba(236,125,85,1)","rgba(245,229,41,1)","rgba(206,77,118,1)","rgba(220,94,104,1)","rgba(157,30,152,1)","rgba(161,32,150,1)","rgba(30,7,138,1)","rgba(203,74,121,1)","rgba(250,196,49,1)","rgba(19,8,136,1)","rgba(57,6,147,1)","rgba(93,2,162,1)","rgba(248,157,63,1)","rgba(244,145,72,1)","rgba(243,238,38,1)","rgba(194,63,129,1)","rgba(58,6,147,1)","rgba(232,117,90,1)","rgba(247,153,66,1)","rgba(83,3,157,1)","rgba(176,41,144,1)","rgba(117,5,165,1)","rgba(51,6,144,1)","rgba(176,41,145,1)","rgba(54,6,146,1)","rgba(117,5,165,1)","rgba(49,6,144,1)","rgba(235,124,86,1)","rgba(144,22,156,1)","rgba(69,5,151,1)","rgba(57,6,147,1)","rgba(249,200,48,1)","rgba(246,152,67,1)","rgba(252,173,53,1)","rgba(242,242,36,1)","rgba(70,5,152,1)","rgba(68,5,151,1)","rgba(252,166,54,1)","rgba(250,161,59,1)","rgba(22,8,136,1)","rgba(249,159,60,1)","rgba(243,144,73,1)","rgba(229,111,93,1)","rgba(198,67,126,1)","rgba(90,2,161,1)","rgba(21,8,136,1)","rgba(191,59,133,1)","rgba(201,71,124,1)","rgba(174,40,145,1)","rgba(194,63,130,1)","rgba(241,138,77,1)","rgba(49,6,144,1)","rgba(163,33,150,1)","rgba(252,167,54,1)","rgba(251,182,52,1)","rgba(122,8,164,1)","rgba(163,33,150,1)","rgba(250,191,50,1)","rgba(250,189,51,1)","rgba(143,21,157,1)","rgba(87,3,159,1)","rgba(240,135,79,1)","rgba(70,5,152,1)","rgba(38,7,140,1)","rgba(240,249,33,1)","rgba(39,7,141,1)","rgba(158,30,152,1)","rgba(247,215,45,1)","rgba(228,106,95,1)","rgba(140,19,158,1)","rgba(244,146,71,1)","rgba(251,181,52,1)","rgba(150,25,154,1)","rgba(201,71,124,1)","rgba(239,133,80,1)","rgba(231,114,91,1)","rgba(231,115,91,1)","rgba(242,240,37,1)","rgba(181,47,141,1)","rgba(76,4,155,1)","rgba(209,80,116,1)","rgba(117,5,165,1)","rgba(199,69,125,1)","rgba(168,36,148,1)","rgba(242,243,36,1)","rgba(173,40,145,1)","rgba(118,6,165,1)","rgba(228,108,94,1)","rgba(83,3,157,1)","rgba(243,236,39,1)","rgba(206,77,118,1)","rgba(93,2,162,1)","rgba(228,108,94,1)","rgba(241,244,35,1)","rgba(235,124,86,1)","rgba(182,48,140,1)","rgba(153,27,153,1)","rgba(251,181,52,1)"],"opacity":0.59999999999999998,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(213,86,111,1)","rgba(234,121,87,1)","rgba(96,2,163,1)","rgba(230,112,92,1)","rgba(149,25,155,1)","rgba(243,142,74,1)","rgba(177,42,144,1)","rgba(243,237,38,1)","rgba(243,236,39,1)","rgba(243,143,74,1)","rgba(129,13,161,1)","rgba(115,4,165,1)","rgba(224,98,100,1)","rgba(133,15,160,1)","rgba(210,81,115,1)","rgba(250,161,59,1)","rgba(95,2,163,1)","rgba(178,44,143,1)","rgba(196,65,128,1)","rgba(250,195,50,1)","rgba(247,219,44,1)","rgba(249,201,48,1)","rgba(236,125,85,1)","rgba(245,229,41,1)","rgba(206,77,118,1)","rgba(220,94,104,1)","rgba(157,30,152,1)","rgba(161,32,150,1)","rgba(30,7,138,1)","rgba(203,74,121,1)","rgba(250,196,49,1)","rgba(19,8,136,1)","rgba(57,6,147,1)","rgba(93,2,162,1)","rgba(248,157,63,1)","rgba(244,145,72,1)","rgba(243,238,38,1)","rgba(194,63,129,1)","rgba(58,6,147,1)","rgba(232,117,90,1)","rgba(247,153,66,1)","rgba(83,3,157,1)","rgba(176,41,144,1)","rgba(117,5,165,1)","rgba(51,6,144,1)","rgba(176,41,145,1)","rgba(54,6,146,1)","rgba(117,5,165,1)","rgba(49,6,144,1)","rgba(235,124,86,1)","rgba(144,22,156,1)","rgba(69,5,151,1)","rgba(57,6,147,1)","rgba(249,200,48,1)","rgba(246,152,67,1)","rgba(252,173,53,1)","rgba(242,242,36,1)","rgba(70,5,152,1)","rgba(68,5,151,1)","rgba(252,166,54,1)","rgba(250,161,59,1)","rgba(22,8,136,1)","rgba(249,159,60,1)","rgba(243,144,73,1)","rgba(229,111,93,1)","rgba(198,67,126,1)","rgba(90,2,161,1)","rgba(21,8,136,1)","rgba(191,59,133,1)","rgba(201,71,124,1)","rgba(174,40,145,1)","rgba(194,63,130,1)","rgba(241,138,77,1)","rgba(49,6,144,1)","rgba(163,33,150,1)","rgba(252,167,54,1)","rgba(251,182,52,1)","rgba(122,8,164,1)","rgba(163,33,150,1)","rgba(250,191,50,1)","rgba(250,189,51,1)","rgba(143,21,157,1)","rgba(87,3,159,1)","rgba(240,135,79,1)","rgba(70,5,152,1)","rgba(38,7,140,1)","rgba(240,249,33,1)","rgba(39,7,141,1)","rgba(158,30,152,1)","rgba(247,215,45,1)","rgba(228,106,95,1)","rgba(140,19,158,1)","rgba(244,146,71,1)","rgba(251,181,52,1)","rgba(150,25,154,1)","rgba(201,71,124,1)","rgba(239,133,80,1)","rgba(231,114,91,1)","rgba(231,115,91,1)","rgba(242,240,37,1)","rgba(181,47,141,1)","rgba(76,4,155,1)","rgba(209,80,116,1)","rgba(117,5,165,1)","rgba(199,69,125,1)","rgba(168,36,148,1)","rgba(242,243,36,1)","rgba(173,40,145,1)","rgba(118,6,165,1)","rgba(228,108,94,1)","rgba(83,3,157,1)","rgba(243,236,39,1)","rgba(206,77,118,1)","rgba(93,2,162,1)","rgba(228,108,94,1)","rgba(241,244,35,1)","rgba(235,124,86,1)","rgba(182,48,140,1)","rgba(153,27,153,1)","rgba(251,181,52,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y3","hoverinfo":"text","frame":null},{"x":[53078,64348,226250,90867,103559,200308,64477,24086,113520,131129,117024,98846,219291,124675,142766,241684,198156,68042,91021,243409,154527,194989,105723,196915,143666,230219,62618,84910,41841,68412,244733,88150,186976,200708,44246,75107,82225,43243,47120,247984,246792,51526,228221,152549,110953,123455,182495,38976,98042,176581,92898,211261,69490,134528,83491,64165,238643,93997,130045,26438,145916,168175,157141,94046,224956,164039,89668,109287,56909,218387,239213,149638,95796,249222,74009,160915,44881,132017,42873,57068,85088,154291,188293,58070,219288,182972,194892,53829,102353,174866,140479,100454,75322,33384,74423,224718,206720,191929,55630,48691,244187,120310,126724,58019,154535,82279,72922,178978,85056,206392,41601,209067,118309,193854,172349,122241,164244,20107,69966,182121],"y":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"text":["Income: $53078<br>Race: White<br>Borough: Queens","Income: $64348<br>Race: White<br>Borough: Queens","Income: $226250<br>Race: White<br>Borough: Queens","Income: $90867<br>Race: White<br>Borough: Queens","Income: $103559<br>Race: White<br>Borough: Queens","Income: $200308<br>Race: White<br>Borough: Queens","Income: $64477<br>Race: White<br>Borough: Queens","Income: $24086<br>Race: White<br>Borough: Queens","Income: $113520<br>Race: White<br>Borough: Queens","Income: $131129<br>Race: White<br>Borough: Queens","Income: $117024<br>Race: White<br>Borough: Queens","Income: $98846<br>Race: White<br>Borough: Queens","Income: $219291<br>Race: White<br>Borough: Queens","Income: $124675<br>Race: White<br>Borough: Queens","Income: $142766<br>Race: White<br>Borough: Queens","Income: $241684<br>Race: White<br>Borough: Queens","Income: $198156<br>Race: White<br>Borough: Queens","Income: $68042<br>Race: White<br>Borough: Queens","Income: $91021<br>Race: White<br>Borough: Queens","Income: $243409<br>Race: White<br>Borough: Queens","Income: $154527<br>Race: White<br>Borough: Queens","Income: $194989<br>Race: White<br>Borough: Queens","Income: $105723<br>Race: White<br>Borough: Queens","Income: $196915<br>Race: White<br>Borough: Queens","Income: $143666<br>Race: White<br>Borough: Queens","Income: $230219<br>Race: White<br>Borough: Queens","Income: $62618<br>Race: White<br>Borough: Queens","Income: $84910<br>Race: White<br>Borough: Queens","Income: $41841<br>Race: White<br>Borough: Queens","Income: $68412<br>Race: White<br>Borough: Queens","Income: $244733<br>Race: Hispanic<br>Borough: Queens","Income: $88150<br>Race: Hispanic<br>Borough: Queens","Income: $186976<br>Race: Hispanic<br>Borough: Queens","Income: $200708<br>Race: Hispanic<br>Borough: Queens","Income: $44246<br>Race: Hispanic<br>Borough: Queens","Income: $75107<br>Race: Hispanic<br>Borough: Queens","Income: $82225<br>Race: Hispanic<br>Borough: Queens","Income: $43243<br>Race: Hispanic<br>Borough: Queens","Income: $47120<br>Race: Hispanic<br>Borough: Queens","Income: $247984<br>Race: Hispanic<br>Borough: Queens","Income: $246792<br>Race: Hispanic<br>Borough: Queens","Income: $51526<br>Race: Hispanic<br>Borough: Queens","Income: $228221<br>Race: Hispanic<br>Borough: Queens","Income: $152549<br>Race: Hispanic<br>Borough: Queens","Income: $110953<br>Race: Hispanic<br>Borough: Queens","Income: $123455<br>Race: Hispanic<br>Borough: Queens","Income: $182495<br>Race: Hispanic<br>Borough: Queens","Income: $38976<br>Race: Hispanic<br>Borough: Queens","Income: $98042<br>Race: Hispanic<br>Borough: Queens","Income: $176581<br>Race: Hispanic<br>Borough: Queens","Income: $92898<br>Race: Hispanic<br>Borough: Queens","Income: $211261<br>Race: Hispanic<br>Borough: Queens","Income: $69490<br>Race: Hispanic<br>Borough: Queens","Income: $134528<br>Race: Hispanic<br>Borough: Queens","Income: $83491<br>Race: Hispanic<br>Borough: Queens","Income: $64165<br>Race: Hispanic<br>Borough: Queens","Income: $238643<br>Race: Hispanic<br>Borough: Queens","Income: $93997<br>Race: Hispanic<br>Borough: Queens","Income: $130045<br>Race: Hispanic<br>Borough: Queens","Income: $26438<br>Race: Hispanic<br>Borough: Queens","Income: $145916<br>Race: Black<br>Borough: Queens","Income: $168175<br>Race: Black<br>Borough: Queens","Income: $157141<br>Race: Black<br>Borough: Queens","Income: $94046<br>Race: Black<br>Borough: Queens","Income: $224956<br>Race: Black<br>Borough: Queens","Income: $164039<br>Race: Black<br>Borough: Queens","Income: $89668<br>Race: Black<br>Borough: Queens","Income: $109287<br>Race: Black<br>Borough: Queens","Income: $56909<br>Race: Black<br>Borough: Queens","Income: $218387<br>Race: Black<br>Borough: Queens","Income: $239213<br>Race: Black<br>Borough: Queens","Income: $149638<br>Race: Black<br>Borough: Queens","Income: $95796<br>Race: Black<br>Borough: Queens","Income: $249222<br>Race: Black<br>Borough: Queens","Income: $74009<br>Race: Black<br>Borough: Queens","Income: $160915<br>Race: Black<br>Borough: Queens","Income: $44881<br>Race: Black<br>Borough: Queens","Income: $132017<br>Race: Black<br>Borough: Queens","Income: $42873<br>Race: Black<br>Borough: Queens","Income: $57068<br>Race: Black<br>Borough: Queens","Income: $85088<br>Race: Black<br>Borough: Queens","Income: $154291<br>Race: Black<br>Borough: Queens","Income: $188293<br>Race: Black<br>Borough: Queens","Income: $58070<br>Race: Black<br>Borough: Queens","Income: $219288<br>Race: Black<br>Borough: Queens","Income: $182972<br>Race: Black<br>Borough: Queens","Income: $194892<br>Race: Black<br>Borough: Queens","Income: $53829<br>Race: Black<br>Borough: Queens","Income: $102353<br>Race: Black<br>Borough: Queens","Income: $174866<br>Race: Black<br>Borough: Queens","Income: $140479<br>Race: Asian<br>Borough: Queens","Income: $100454<br>Race: Asian<br>Borough: Queens","Income: $75322<br>Race: Asian<br>Borough: Queens","Income: $33384<br>Race: Asian<br>Borough: Queens","Income: $74423<br>Race: Asian<br>Borough: Queens","Income: $224718<br>Race: Asian<br>Borough: Queens","Income: $206720<br>Race: Asian<br>Borough: Queens","Income: $191929<br>Race: Asian<br>Borough: Queens","Income: $55630<br>Race: Asian<br>Borough: Queens","Income: $48691<br>Race: Asian<br>Borough: Queens","Income: $244187<br>Race: Asian<br>Borough: Queens","Income: $120310<br>Race: Asian<br>Borough: Queens","Income: $126724<br>Race: Asian<br>Borough: Queens","Income: $58019<br>Race: Asian<br>Borough: Queens","Income: $154535<br>Race: Asian<br>Borough: Queens","Income: $82279<br>Race: Asian<br>Borough: Queens","Income: $72922<br>Race: Asian<br>Borough: Queens","Income: $178978<br>Race: Asian<br>Borough: Queens","Income: $85056<br>Race: Asian<br>Borough: Queens","Income: $206392<br>Race: Asian<br>Borough: Queens","Income: $41601<br>Race: Asian<br>Borough: Queens","Income: $209067<br>Race: Asian<br>Borough: Queens","Income: $118309<br>Race: Asian<br>Borough: Queens","Income: $193854<br>Race: Asian<br>Borough: Queens","Income: $172349<br>Race: Asian<br>Borough: Queens","Income: $122241<br>Race: Asian<br>Borough: Queens","Income: $164244<br>Race: Asian<br>Borough: Queens","Income: $20107<br>Race: Asian<br>Borough: Queens","Income: $69966<br>Race: Asian<br>Borough: Queens","Income: $182121<br>Race: Asian<br>Borough: Queens"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(86,3,159,1)","rgba(103,0,167,1)","rgba(248,207,47,1)","rgba(148,24,155,1)","rgba(166,35,149,1)","rgba(250,161,59,1)","rgba(104,0,167,1)","rgba(28,8,138,1)","rgba(179,44,143,1)","rgba(199,68,126,1)","rgba(183,49,139,1)","rgba(159,31,151,1)","rgba(250,195,50,1)","rgba(192,60,132,1)","rgba(210,82,114,1)","rgba(244,235,39,1)","rgba(249,158,62,1)","rgba(110,2,167,1)","rgba(148,24,155,1)","rgba(243,238,38,1)","rgba(222,96,102,1)","rgba(247,154,66,1)","rgba(169,37,147,1)","rgba(248,156,63,1)","rgba(211,83,113,1)","rgba(247,214,45,1)","rgba(101,1,165,1)","rgba(138,18,158,1)","rgba(67,5,150,1)","rgba(111,2,167,1)","rgba(242,240,37,1)","rgba(143,21,157,1)","rgba(243,142,74,1)","rgba(250,162,58,1)","rgba(71,5,152,1)","rgba(123,8,163,1)","rgba(134,16,160,1)","rgba(69,5,151,1)","rgba(76,4,154,1)","rgba(241,246,35,1)","rgba(241,244,35,1)","rgba(83,3,157,1)","rgba(248,211,46,1)","rgba(220,94,104,1)","rgba(176,41,145,1)","rgba(190,58,133,1)","rgba(240,136,78,1)","rgba(61,5,148,1)","rgba(158,30,151,1)","rgba(237,128,84,1)","rgba(151,26,154,1)","rgba(251,180,52,1)","rgba(113,3,166,1)","rgba(202,72,122,1)","rgba(136,17,159,1)","rgba(103,0,167,1)","rgba(245,229,41,1)","rgba(152,27,154,1)","rgba(197,67,127,1)","rgba(35,7,139,1)","rgba(214,86,111,1)","rgba(232,115,91,1)","rgba(224,99,99,1)","rgba(152,27,154,1)","rgba(249,205,48,1)","rgba(229,109,94,1)","rgba(146,23,156,1)","rgba(173,40,145,1)","rgba(92,2,161,1)","rgba(250,193,50,1)","rgba(244,230,41,1)","rgba(217,90,107,1)","rgba(155,28,153,1)","rgba(240,248,34,1)","rgba(121,7,164,1)","rgba(227,105,96,1)","rgba(72,4,153,1)","rgba(199,69,125,1)","rgba(68,5,151,1)","rgba(92,2,161,1)","rgba(139,19,158,1)","rgba(222,96,102,1)","rgba(243,144,73,1)","rgba(94,2,162,1)","rgba(250,195,50,1)","rgba(240,137,78,1)","rgba(247,153,66,1)","rgba(87,3,159,1)","rgba(164,34,149,1)","rgba(236,125,85,1)","rgba(208,79,116,1)","rgba(161,32,150,1)","rgba(123,8,163,1)","rgba(51,6,144,1)","rgba(121,7,164,1)","rgba(249,204,48,1)","rgba(252,171,53,1)","rgba(246,149,69,1)","rgba(90,2,160,1)","rgba(78,4,155,1)","rgba(243,239,37,1)","rgba(187,54,136,1)","rgba(194,62,130,1)","rgba(94,2,162,1)","rgba(222,96,102,1)","rgba(134,16,160,1)","rgba(119,6,164,1)","rgba(238,131,82,1)","rgba(139,18,158,1)","rgba(252,171,53,1)","rgba(66,5,150,1)","rgba(252,176,53,1)","rgba(184,51,138,1)","rgba(247,152,67,1)","rgba(234,122,87,1)","rgba(189,56,134,1)","rgba(229,110,93,1)","rgba(13,8,135,1)","rgba(113,3,166,1)","rgba(240,136,79,1)"],"opacity":0.59999999999999998,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(86,3,159,1)","rgba(103,0,167,1)","rgba(248,207,47,1)","rgba(148,24,155,1)","rgba(166,35,149,1)","rgba(250,161,59,1)","rgba(104,0,167,1)","rgba(28,8,138,1)","rgba(179,44,143,1)","rgba(199,68,126,1)","rgba(183,49,139,1)","rgba(159,31,151,1)","rgba(250,195,50,1)","rgba(192,60,132,1)","rgba(210,82,114,1)","rgba(244,235,39,1)","rgba(249,158,62,1)","rgba(110,2,167,1)","rgba(148,24,155,1)","rgba(243,238,38,1)","rgba(222,96,102,1)","rgba(247,154,66,1)","rgba(169,37,147,1)","rgba(248,156,63,1)","rgba(211,83,113,1)","rgba(247,214,45,1)","rgba(101,1,165,1)","rgba(138,18,158,1)","rgba(67,5,150,1)","rgba(111,2,167,1)","rgba(242,240,37,1)","rgba(143,21,157,1)","rgba(243,142,74,1)","rgba(250,162,58,1)","rgba(71,5,152,1)","rgba(123,8,163,1)","rgba(134,16,160,1)","rgba(69,5,151,1)","rgba(76,4,154,1)","rgba(241,246,35,1)","rgba(241,244,35,1)","rgba(83,3,157,1)","rgba(248,211,46,1)","rgba(220,94,104,1)","rgba(176,41,145,1)","rgba(190,58,133,1)","rgba(240,136,78,1)","rgba(61,5,148,1)","rgba(158,30,151,1)","rgba(237,128,84,1)","rgba(151,26,154,1)","rgba(251,180,52,1)","rgba(113,3,166,1)","rgba(202,72,122,1)","rgba(136,17,159,1)","rgba(103,0,167,1)","rgba(245,229,41,1)","rgba(152,27,154,1)","rgba(197,67,127,1)","rgba(35,7,139,1)","rgba(214,86,111,1)","rgba(232,115,91,1)","rgba(224,99,99,1)","rgba(152,27,154,1)","rgba(249,205,48,1)","rgba(229,109,94,1)","rgba(146,23,156,1)","rgba(173,40,145,1)","rgba(92,2,161,1)","rgba(250,193,50,1)","rgba(244,230,41,1)","rgba(217,90,107,1)","rgba(155,28,153,1)","rgba(240,248,34,1)","rgba(121,7,164,1)","rgba(227,105,96,1)","rgba(72,4,153,1)","rgba(199,69,125,1)","rgba(68,5,151,1)","rgba(92,2,161,1)","rgba(139,19,158,1)","rgba(222,96,102,1)","rgba(243,144,73,1)","rgba(94,2,162,1)","rgba(250,195,50,1)","rgba(240,137,78,1)","rgba(247,153,66,1)","rgba(87,3,159,1)","rgba(164,34,149,1)","rgba(236,125,85,1)","rgba(208,79,116,1)","rgba(161,32,150,1)","rgba(123,8,163,1)","rgba(51,6,144,1)","rgba(121,7,164,1)","rgba(249,204,48,1)","rgba(252,171,53,1)","rgba(246,149,69,1)","rgba(90,2,160,1)","rgba(78,4,155,1)","rgba(243,239,37,1)","rgba(187,54,136,1)","rgba(194,62,130,1)","rgba(94,2,162,1)","rgba(222,96,102,1)","rgba(134,16,160,1)","rgba(119,6,164,1)","rgba(238,131,82,1)","rgba(139,18,158,1)","rgba(252,171,53,1)","rgba(66,5,150,1)","rgba(252,176,53,1)","rgba(184,51,138,1)","rgba(247,152,67,1)","rgba(234,122,87,1)","rgba(189,56,134,1)","rgba(229,110,93,1)","rgba(13,8,135,1)","rgba(113,3,166,1)","rgba(240,136,79,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y4","hoverinfo":"text","frame":null},{"x":[69488,207205,90786,178181,234517,46629,49372,175991,118658,211912,243431,36212,125751,181365,39996,248377,78213,31394,177855,200993,101329,104282,86033,38394,104054,60943,143292,135908,237358,98504,126884,38982,217825,111002,189257,59501,124595,197147,34409,207469,89263,103874,91786,28595,139325,176173,227744,25871,247488,89664,236002,178150,122819,207790,29085,189977,100205,210728,143175,83145,204218,41078,211385,83677,193215,241755,38737,216504,204515,108590,95347,67136,150958,224253,141834,155000,173119,141875,137264,23717,30973,233751,196936,66249,169560,170366,110908,206830,145815,223581,147262,228391,155116,117397,238405,183079,115060,24224,150349,132715,222095,206956,216443,104616,221008,54808,84817,173342,244798,154030,141116,33980,242879,47655,40324,222576,136925,97624,225697,27353],"y":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"text":["Income: $69488<br>Race: White<br>Borough: Staten Island","Income: $207205<br>Race: White<br>Borough: Staten Island","Income: $90786<br>Race: White<br>Borough: Staten Island","Income: $178181<br>Race: White<br>Borough: Staten Island","Income: $234517<br>Race: White<br>Borough: Staten Island","Income: $46629<br>Race: White<br>Borough: Staten Island","Income: $49372<br>Race: White<br>Borough: Staten Island","Income: $175991<br>Race: White<br>Borough: Staten Island","Income: $118658<br>Race: White<br>Borough: Staten Island","Income: $211912<br>Race: White<br>Borough: Staten Island","Income: $243431<br>Race: White<br>Borough: Staten Island","Income: $36212<br>Race: White<br>Borough: Staten Island","Income: $125751<br>Race: White<br>Borough: Staten Island","Income: $181365<br>Race: White<br>Borough: Staten Island","Income: $39996<br>Race: White<br>Borough: Staten Island","Income: $248377<br>Race: White<br>Borough: Staten Island","Income: $78213<br>Race: White<br>Borough: Staten Island","Income: $31394<br>Race: White<br>Borough: Staten Island","Income: $177855<br>Race: White<br>Borough: Staten Island","Income: $200993<br>Race: White<br>Borough: Staten Island","Income: $101329<br>Race: White<br>Borough: Staten Island","Income: $104282<br>Race: White<br>Borough: Staten Island","Income: $86033<br>Race: White<br>Borough: Staten Island","Income: $38394<br>Race: White<br>Borough: Staten Island","Income: $104054<br>Race: White<br>Borough: Staten Island","Income: $60943<br>Race: White<br>Borough: Staten Island","Income: $143292<br>Race: White<br>Borough: Staten Island","Income: $135908<br>Race: White<br>Borough: Staten Island","Income: $237358<br>Race: White<br>Borough: Staten Island","Income: $98504<br>Race: White<br>Borough: Staten Island","Income: $126884<br>Race: Hispanic<br>Borough: Staten Island","Income: $38982<br>Race: Hispanic<br>Borough: Staten Island","Income: $217825<br>Race: Hispanic<br>Borough: Staten Island","Income: $111002<br>Race: Hispanic<br>Borough: Staten Island","Income: $189257<br>Race: Hispanic<br>Borough: Staten Island","Income: $59501<br>Race: Hispanic<br>Borough: Staten Island","Income: $124595<br>Race: Hispanic<br>Borough: Staten Island","Income: $197147<br>Race: Hispanic<br>Borough: Staten Island","Income: $34409<br>Race: Hispanic<br>Borough: Staten Island","Income: $207469<br>Race: Hispanic<br>Borough: Staten Island","Income: $89263<br>Race: Hispanic<br>Borough: Staten Island","Income: $103874<br>Race: Hispanic<br>Borough: Staten Island","Income: $91786<br>Race: Hispanic<br>Borough: Staten Island","Income: $28595<br>Race: Hispanic<br>Borough: Staten Island","Income: $139325<br>Race: Hispanic<br>Borough: Staten Island","Income: $176173<br>Race: Hispanic<br>Borough: Staten Island","Income: $227744<br>Race: Hispanic<br>Borough: Staten Island","Income: $25871<br>Race: Hispanic<br>Borough: Staten Island","Income: $247488<br>Race: Hispanic<br>Borough: Staten Island","Income: $89664<br>Race: Hispanic<br>Borough: Staten Island","Income: $236002<br>Race: Hispanic<br>Borough: Staten Island","Income: $178150<br>Race: Hispanic<br>Borough: Staten Island","Income: $122819<br>Race: Hispanic<br>Borough: Staten Island","Income: $207790<br>Race: Hispanic<br>Borough: Staten Island","Income: $29085<br>Race: Hispanic<br>Borough: Staten Island","Income: $189977<br>Race: Hispanic<br>Borough: Staten Island","Income: $100205<br>Race: Hispanic<br>Borough: Staten Island","Income: $210728<br>Race: Hispanic<br>Borough: Staten Island","Income: $143175<br>Race: Hispanic<br>Borough: Staten Island","Income: $83145<br>Race: Hispanic<br>Borough: Staten Island","Income: $204218<br>Race: Black<br>Borough: Staten Island","Income: $41078<br>Race: Black<br>Borough: Staten Island","Income: $211385<br>Race: Black<br>Borough: Staten Island","Income: $83677<br>Race: Black<br>Borough: Staten Island","Income: $193215<br>Race: Black<br>Borough: Staten Island","Income: $241755<br>Race: Black<br>Borough: Staten Island","Income: $38737<br>Race: Black<br>Borough: Staten Island","Income: $216504<br>Race: Black<br>Borough: Staten Island","Income: $204515<br>Race: Black<br>Borough: Staten Island","Income: $108590<br>Race: Black<br>Borough: Staten Island","Income: $95347<br>Race: Black<br>Borough: Staten Island","Income: $67136<br>Race: Black<br>Borough: Staten Island","Income: $150958<br>Race: Black<br>Borough: Staten Island","Income: $224253<br>Race: Black<br>Borough: Staten Island","Income: $141834<br>Race: Black<br>Borough: Staten Island","Income: $155000<br>Race: Black<br>Borough: Staten Island","Income: $173119<br>Race: Black<br>Borough: Staten Island","Income: $141875<br>Race: Black<br>Borough: Staten Island","Income: $137264<br>Race: Black<br>Borough: Staten Island","Income: $23717<br>Race: Black<br>Borough: Staten Island","Income: $30973<br>Race: Black<br>Borough: Staten Island","Income: $233751<br>Race: Black<br>Borough: Staten Island","Income: $196936<br>Race: Black<br>Borough: Staten Island","Income: $66249<br>Race: Black<br>Borough: Staten Island","Income: $169560<br>Race: Black<br>Borough: Staten Island","Income: $170366<br>Race: Black<br>Borough: Staten Island","Income: $110908<br>Race: Black<br>Borough: Staten Island","Income: $206830<br>Race: Black<br>Borough: Staten Island","Income: $145815<br>Race: Black<br>Borough: Staten Island","Income: $223581<br>Race: Black<br>Borough: Staten Island","Income: $147262<br>Race: Asian<br>Borough: Staten Island","Income: $228391<br>Race: Asian<br>Borough: Staten Island","Income: $155116<br>Race: Asian<br>Borough: Staten Island","Income: $117397<br>Race: Asian<br>Borough: Staten Island","Income: $238405<br>Race: Asian<br>Borough: Staten Island","Income: $183079<br>Race: Asian<br>Borough: Staten Island","Income: $115060<br>Race: Asian<br>Borough: Staten Island","Income: $24224<br>Race: Asian<br>Borough: Staten Island","Income: $150349<br>Race: Asian<br>Borough: Staten Island","Income: $132715<br>Race: Asian<br>Borough: Staten Island","Income: $222095<br>Race: Asian<br>Borough: Staten Island","Income: $206956<br>Race: Asian<br>Borough: Staten Island","Income: $216443<br>Race: Asian<br>Borough: Staten Island","Income: $104616<br>Race: Asian<br>Borough: Staten Island","Income: $221008<br>Race: Asian<br>Borough: Staten Island","Income: $54808<br>Race: Asian<br>Borough: Staten Island","Income: $84817<br>Race: Asian<br>Borough: Staten Island","Income: $173342<br>Race: Asian<br>Borough: Staten Island","Income: $244798<br>Race: Asian<br>Borough: Staten Island","Income: $154030<br>Race: Asian<br>Borough: Staten Island","Income: $141116<br>Race: Asian<br>Borough: Staten Island","Income: $33980<br>Race: Asian<br>Borough: Staten Island","Income: $242879<br>Race: Asian<br>Borough: Staten Island","Income: $47655<br>Race: Asian<br>Borough: Staten Island","Income: $40324<br>Race: Asian<br>Borough: Staten Island","Income: $222576<br>Race: Asian<br>Borough: Staten Island","Income: $136925<br>Race: Asian<br>Borough: Staten Island","Income: $97624<br>Race: Asian<br>Borough: Staten Island","Income: $225697<br>Race: Asian<br>Borough: Staten Island","Income: $27353<br>Race: Asian<br>Borough: Staten Island"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":["rgba(113,3,166,1)","rgba(252,172,53,1)","rgba(147,24,155,1)","rgba(238,130,82,1)","rgba(246,222,43,1)","rgba(75,4,154,1)","rgba(80,4,156,1)","rgba(236,127,84,1)","rgba(185,52,138,1)","rgba(251,181,52,1)","rgba(243,238,38,1)","rgba(56,6,146,1)","rgba(193,61,131,1)","rgba(239,134,79,1)","rgba(63,5,149,1)","rgba(241,246,34,1)","rgba(128,12,162,1)","rgba(46,7,143,1)","rgba(237,129,83,1)","rgba(250,162,58,1)","rgba(163,33,150,1)","rgba(167,36,148,1)","rgba(140,19,158,1)","rgba(60,6,148,1)","rgba(166,35,148,1)","rgba(98,1,164,1)","rgba(211,83,114,1)","rgba(204,74,121,1)","rgba(245,227,42,1)","rgba(159,31,151,1)","rgba(194,63,130,1)","rgba(61,5,148,1)","rgba(250,192,50,1)","rgba(176,41,145,1)","rgba(244,146,72,1)","rgba(96,2,163,1)","rgba(191,60,132,1)","rgba(248,157,63,1)","rgba(53,6,145,1)","rgba(252,173,53,1)","rgba(145,22,156,1)","rgba(166,35,148,1)","rgba(149,25,155,1)","rgba(40,7,141,1)","rgba(207,78,118,1)","rgba(236,127,84,1)","rgba(248,210,46,1)","rgba(33,7,139,1)","rgba(241,245,35,1)","rgba(146,23,156,1)","rgba(246,225,42,1)","rgba(238,130,82,1)","rgba(190,57,134,1)","rgba(252,173,53,1)","rgba(41,7,141,1)","rgba(244,147,71,1)","rgba(161,32,150,1)","rgba(251,179,52,1)","rgba(211,83,114,1)","rgba(136,17,159,1)","rgba(252,167,54,1)","rgba(65,5,150,1)","rgba(251,180,52,1)","rgba(137,17,159,1)","rgba(246,151,68,1)","rgba(243,235,39,1)","rgba(61,5,148,1)","rgba(250,189,51,1)","rgba(252,167,54,1)","rgba(172,39,146,1)","rgba(154,28,153,1)","rgba(108,1,167,1)","rgba(218,92,106,1)","rgba(249,204,48,1)","rgba(210,81,115,1)","rgba(222,97,101,1)","rgba(235,123,87,1)","rgba(210,81,115,1)","rgba(205,76,120,1)","rgba(27,8,138,1)","rgba(46,7,143,1)","rgba(246,221,44,1)","rgba(248,156,63,1)","rgba(106,0,168,1)","rgba(232,117,89,1)","rgba(233,119,89,1)","rgba(176,41,145,1)","rgba(252,172,53,1)","rgba(213,86,111,1)","rgba(249,202,48,1)","rgba(215,88,109,1)","rgba(248,211,46,1)","rgba(222,97,101,1)","rgba(183,50,139,1)","rgba(245,229,41,1)","rgba(240,137,78,1)","rgba(181,47,141,1)","rgba(29,8,138,1)","rgba(218,91,106,1)","rgba(200,70,124,1)","rgba(249,200,49,1)","rgba(252,172,53,1)","rgba(250,189,51,1)","rgba(167,36,148,1)","rgba(250,198,49,1)","rgba(88,3,160,1)","rgba(138,18,158,1)","rgba(235,123,86,1)","rgba(242,240,37,1)","rgba(221,95,102,1)","rgba(209,80,116,1)","rgba(52,6,145,1)","rgba(243,237,38,1)","rgba(77,4,155,1)","rgba(64,5,149,1)","rgba(249,201,48,1)","rgba(205,75,120,1)","rgba(157,30,152,1)","rgba(249,206,47,1)","rgba(37,7,140,1)"],"opacity":0.59999999999999998,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":["rgba(113,3,166,1)","rgba(252,172,53,1)","rgba(147,24,155,1)","rgba(238,130,82,1)","rgba(246,222,43,1)","rgba(75,4,154,1)","rgba(80,4,156,1)","rgba(236,127,84,1)","rgba(185,52,138,1)","rgba(251,181,52,1)","rgba(243,238,38,1)","rgba(56,6,146,1)","rgba(193,61,131,1)","rgba(239,134,79,1)","rgba(63,5,149,1)","rgba(241,246,34,1)","rgba(128,12,162,1)","rgba(46,7,143,1)","rgba(237,129,83,1)","rgba(250,162,58,1)","rgba(163,33,150,1)","rgba(167,36,148,1)","rgba(140,19,158,1)","rgba(60,6,148,1)","rgba(166,35,148,1)","rgba(98,1,164,1)","rgba(211,83,114,1)","rgba(204,74,121,1)","rgba(245,227,42,1)","rgba(159,31,151,1)","rgba(194,63,130,1)","rgba(61,5,148,1)","rgba(250,192,50,1)","rgba(176,41,145,1)","rgba(244,146,72,1)","rgba(96,2,163,1)","rgba(191,60,132,1)","rgba(248,157,63,1)","rgba(53,6,145,1)","rgba(252,173,53,1)","rgba(145,22,156,1)","rgba(166,35,148,1)","rgba(149,25,155,1)","rgba(40,7,141,1)","rgba(207,78,118,1)","rgba(236,127,84,1)","rgba(248,210,46,1)","rgba(33,7,139,1)","rgba(241,245,35,1)","rgba(146,23,156,1)","rgba(246,225,42,1)","rgba(238,130,82,1)","rgba(190,57,134,1)","rgba(252,173,53,1)","rgba(41,7,141,1)","rgba(244,147,71,1)","rgba(161,32,150,1)","rgba(251,179,52,1)","rgba(211,83,114,1)","rgba(136,17,159,1)","rgba(252,167,54,1)","rgba(65,5,150,1)","rgba(251,180,52,1)","rgba(137,17,159,1)","rgba(246,151,68,1)","rgba(243,235,39,1)","rgba(61,5,148,1)","rgba(250,189,51,1)","rgba(252,167,54,1)","rgba(172,39,146,1)","rgba(154,28,153,1)","rgba(108,1,167,1)","rgba(218,92,106,1)","rgba(249,204,48,1)","rgba(210,81,115,1)","rgba(222,97,101,1)","rgba(235,123,87,1)","rgba(210,81,115,1)","rgba(205,76,120,1)","rgba(27,8,138,1)","rgba(46,7,143,1)","rgba(246,221,44,1)","rgba(248,156,63,1)","rgba(106,0,168,1)","rgba(232,117,89,1)","rgba(233,119,89,1)","rgba(176,41,145,1)","rgba(252,172,53,1)","rgba(213,86,111,1)","rgba(249,202,48,1)","rgba(215,88,109,1)","rgba(248,211,46,1)","rgba(222,97,101,1)","rgba(183,50,139,1)","rgba(245,229,41,1)","rgba(240,137,78,1)","rgba(181,47,141,1)","rgba(29,8,138,1)","rgba(218,91,106,1)","rgba(200,70,124,1)","rgba(249,200,49,1)","rgba(252,172,53,1)","rgba(250,189,51,1)","rgba(167,36,148,1)","rgba(250,198,49,1)","rgba(88,3,160,1)","rgba(138,18,158,1)","rgba(235,123,86,1)","rgba(242,240,37,1)","rgba(221,95,102,1)","rgba(209,80,116,1)","rgba(52,6,145,1)","rgba(243,237,38,1)","rgba(77,4,155,1)","rgba(64,5,149,1)","rgba(249,201,48,1)","rgba(205,75,120,1)","rgba(157,30,152,1)","rgba(249,206,47,1)","rgba(37,7,140,1)"]}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y5","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":66.211706102117063,"r":9.2984640929846396,"b":51.141552511415526,"l":92.054794520547958},"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"title":{"text":"Race and Income Across Census Tracts in New York City","font":{"color":"rgba(0,0,0,1)","family":"","size":22.316313823163139},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[8619.1999999999989,261350.79999999999],"tickmode":"array","ticktext":["50000","100000","150000","200000","250000"],"tickvals":[50000,100000,150000,200000,250000],"categoryorder":"array","categoryarray":["50000","100000","150000","200000","250000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y5","title":"","hoverformat":".2f"},"annotations":[{"text":"Median household income","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-27.895392278953928},{"text":"Largest group in Census tract","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-72.528019925280233},{"text":"Bronx","x":0.5,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.877542548775427},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Brooklyn","x":0.5,"y":0.78111249481112499,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.877542548775427},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Manhattan","x":0.5,"y":0.58111249481112492,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.877542548775427},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Queens","x":0.5,"y":0.38111249481112486,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.877542548775427},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Staten Island","x":0.5,"y":0.1811124948111249,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.877542548775427},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.8188875051888751,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["White","Hispanic","Black","Asian"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["White","Hispanic","Black","Asian"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0.8188875051888751,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":29.755085097550861,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0.61888750518887503,"y1":0.78111249481112499},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":29.755085097550861,"yanchor":0.78111249481112499,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0.41888750518887496,"y1":0.58111249481112492},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":29.755085097550861,"yanchor":0.58111249481112492,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0.21888750518887501,"y1":0.38111249481112486},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":29.755085097550861,"yanchor":0.38111249481112486,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":0.1811124948111249},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":29.755085097550861,"yanchor":0.1811124948111249,"ysizemode":"pixel"}],"yaxis2":{"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["White","Hispanic","Black","Asian"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["White","Hispanic","Black","Asian"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.61888750518887503,0.78111249481112499],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis3":{"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["White","Hispanic","Black","Asian"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["White","Hispanic","Black","Asian"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.41888750518887496,0.58111249481112492],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis4":{"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["White","Hispanic","Black","Asian"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["White","Hispanic","Black","Asian"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.21888750518887501,0.38111249481112486],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"yaxis5":{"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["White","Hispanic","Black","Asian"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["White","Hispanic","Black","Asian"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.1811124948111249],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.877542548775427}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"728c118c5d83":{"x":{},"y":{},"colour":{},"text":{},"type":"scatter"}},"cur_data":"728c118c5d83","visdat":{"728c118c5d83":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>➤ X-axis: Median household income</p>
+<p>Each dot’s horizontal position represents the estimated income for that census tract (from $20,000 to $250,000 in the example).</p>
+<p>➤ Y-axis: Largest group in Census tract</p>
+<p>This is a categorical axis showing the racial group that is the largest in each tract (White, Hispanic, Black, or Asian).</p>
+<p>Each row corresponds to one of these groups.</p>
+<p>➤ Facets (Small Multiples): Each panel (strip) represents a borough of NYC:</p>
+<p>Bronx, Brooklyn, Manhattan, Queens, Staten Island</p>
+<p>So you’re seeing the same kind of plot repeated for each borough, which helps compare across them.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

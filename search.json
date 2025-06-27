@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Race and Income",
+    "section": "",
+    "text": "➤ X-axis: Median household income\nEach dot’s horizontal position represents the estimated income for that census tract (from $20,000 to $250,000 in the example).\n➤ Y-axis: Largest group in Census tract\nThis is a categorical axis showing the racial group that is the largest in each tract (White, Hispanic, Black, or Asian).\nEach row corresponds to one of these groups.\n➤ Facets (Small Multiples): Each panel (strip) represents a borough of NYC:\nBronx, Brooklyn, Manhattan, Queens, Staten Island\nSo you’re seeing the same kind of plot repeated for each borough, which helps compare across them."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
